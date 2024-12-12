@@ -1,5 +1,7 @@
 FROM groovy:jdk21
 
+USER groovy
+
 ARG IDEAU_FILE=ideaIU-2024.3.1.tar.gz
 ARG APACHE_IVY_FILE=apache-ivy-2.5.2-bin.tar.gz
 
