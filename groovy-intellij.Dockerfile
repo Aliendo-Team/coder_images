@@ -3,6 +3,8 @@ FROM groovy:jdk21
 ARG IDEAU_FILE=ideaIU-2024.3.1.tar.gz
 ARG APACHE_IVY_FILE=apache-ivy-2.5.2-bin.tar.gz
 
+RUN mkdir -p ~/.cache/JetBrains && mkdir -p ~/.ivy
+
 # Install IntelliJ IDEA
 RUN wget https://download.jetbrains.com/idea/$IDEAU_FILE && \
     tar -xzf $IDEAU_FILE -C ~/.cache/JetBrains && \
