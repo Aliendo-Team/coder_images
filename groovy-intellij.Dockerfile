@@ -11,6 +11,9 @@ RUN	apt-get update && apt-get install -y git curl nano
 # Configure Groovy Credentials
 COPY grapeConfig.xml /home/groovy/.groovy/grapeConfig.xml
 
+# Configure user and group
+RUN usermod -a -G root groovy
+
 USER groovy
 
 # Create directory
