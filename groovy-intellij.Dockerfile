@@ -6,7 +6,9 @@ ARG APACHE_IVY_FILE=apache-ivy-2.5.2-bin.tar.gz
 USER root
 
 # Install Packages
-RUN	apt-get update && apt-get install -y git curl nano
+RUN	apt-get update && apt-get install -y git curl nano sudo
+# add groovy user to sudoers
+RUN echo "groovy ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Configure Groovy Credentials
 COPY grapeConfig.xml /home/groovy/.groovy/grapeConfig.xml
